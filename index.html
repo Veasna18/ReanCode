@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rean Code - Learn. Build. Grow.</title>
+
+        <link rel="stylesheet" href="/reancodeV2/src/style/main.css">
+        <link rel="icon" type="image/png" href="/reancodeV2/public/ReanCodeIcon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="menu-bar" id="overlay">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="brand">
+                <div class="logo">
+                    <img src="/reancodeV2/public/ReanCodeIcon.png" alt="ReanCode logo">
+                </div>
+                <div class="brand-text">
+                    <h3>REAN CODE</h3>
+                    <h5 data-i18n="brand.tagline">LEARN. BUILD. GROW.</h5>
+                </div>
+            </div>
+
+            <div class="notification">
+                <button class="language-pill" id="headerLanguageButton" type="button">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLanguageLabel">EN</span>
+                </button>
+
+                <div class="theme-mode" role="button" tabindex="0" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                </div>
+
+                <div class="bell-wrapper">
+                    <i class="fas fa-bell" style="font-size: 1.5rem;"></i>
+                    <span>1</span>
+                </div>
+
+                <i class="fas fa-user-circle user-icon" id="userBtn"></i>
+                <div class="user-dropdown" id="userDropdown">
+                    <div class="dropdown-header">
+                        <i class="fas fa-user-circle" style="display: flex; justify-content: center; font-size: 40px;"></i>
+                        <div style="padding-top: 10px;"><center><p data-i18n="dropdown.user">Student Profile</p></center></div>
+                    </div>
+                    <div class="noting-bar"></div>
+                    <a href="#dashboard"><i class="fas fa-user"></i> <span data-i18n="dropdown.profile">Profile</span></a>
+                    <a href="#settings"><i class="fas fa-cog"></i> <span data-i18n="dropdown.settings">Settings</span></a>
+                    <div class="dropdown-language">
+                        <div class="dropdown-language-label">
+                            <i class="fas fa-globe"></i>
+                            <span data-i18n="dropdown.language">Language</span>
+                        </div>
+                        <div class="language-options">
+                            <button class="lang-option" data-lang="en" type="button">English</button>
+                            <button class="lang-option" data-lang="kh" type="button">ខ្មែរ</button>
+                            <button class="lang-option" data-lang="zh" type="button">中文</button>
+                        </div>
+                    </div>
+                    <div class="noting-bar"></div>
+                    <a href="#" class="sign-out" id="signOutBtn"><i class="fas fa-sign-out-alt"></i> <span data-i18n="dropdown.signout">Sign Out</span></a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="menu-side" id="sideMenu">
+            <div class="brand">
+                <div class="logo">
+                    <img src="/reancodeV2/public/ReanCodeIcon.png" alt="ReanCode logo">
+                </div>
+                <div class="brand-text">
+                    <h3>REAN CODE</h3>
+                    <h5 data-i18n="brand.tagline">LEARN. BUILD. GROW.</h5>
+                </div>
+            </div>
+
+            <div class="noting-bar"></div>
+
+            <div class="menu-link">
+                <div class="link-item" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <a href="#home" data-i18n="nav.home">Home</a>
+                </div>
+                <div class="link-item" data-section="video">
+                    <i class="fas fa-play"></i>
+                    <a href="#video" data-i18n="nav.video">Videos</a>
+                </div>
+                <div class="link-item" data-section="books">
+                    <i class="fas fa-book"></i>
+                    <a href="#books" data-i18n="nav.books">Books</a>
+                </div>
+                <div class="link-item" data-section="ai_assis">
+                    <i class="fas fa-robot"></i>
+                    <a href="#ai_assis" data-i18n="nav.ai">AI Chatbot</a>
+                </div>
+
+                <div class="noting-bar"></div>
+
+                <div class="link-item" data-section="score">
+                    <i class="fas fa-trophy"></i>
+                    <a href="#score" data-i18n="nav.score">Score</a>
+                </div>
+                <div class="link-item" data-section="quiz">
+                    <i class="fas fa-lightbulb"></i>
+                    <a href="#quiz" data-i18n="nav.quiz">Quiz</a>
+                </div>
+                <div class="link-item" data-section="community">
+                    <i class="fas fa-users"></i>
+                    <a href="#community" data-i18n="nav.community">Community</a>
+                </div>
+
+                <div class="noting-bar"></div>
+
+                <div class="link-item" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <a href="#dashboard" data-i18n="nav.dashboard">Dashboard</a>
+                </div>
+                <div class="link-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <a href="#settings" data-i18n="nav.settings">Settings</a>
+                </div>
+                <div class="link-item" data-section="about">
+                    <i class="fas fa-info-circle"></i>
+                    <a href="#about" data-i18n="nav.about">About</a>
+                </div>
+                <div class="link-item" data-section="services">
+                    <i class="fas fa-concierge-bell"></i>
+                    <a href="#services" data-i18n="nav.services">Services</a>
+                </div>
+            </div>
+
+            <div class="menislider-footer">
+                <h5>&copy; 2026 Rean Code v2.0</h5>
+            </div>
+        </nav>
+
+        <div class="bg-overlay" id="bgOverlay"></div>
+
+        <div class="auth-container" id="authContainer">
+            <form action="#" id="login-form" class="auth-form login">
+                <h2 data-i18n="auth.loginTitle">Welcome back to Rean Code</h2>
+
+                <label for="login-email" data-i18n="auth.email">Email</label>
+                <input type="email" id="login-email" placeholder="Rean@code.com" required>
+
+                <label for="login-pass" data-i18n="auth.password">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="login-pass" placeholder="xxxxxxxx" required>
+                    <span class="eyes-icon" id="togglePassword"><i class="fas fa-eye"></i></span>
+                </div>
+
+                <div class="remember">
+                    <input type="checkbox" id="rem-me">
+                    <label for="rem-me" data-i18n="auth.remember">Remember me</label>
+                </div>
+
+                <a href="#settings" class="forgot-link" data-i18n="auth.forgot">I forgot password?</a>
+
+                <button type="submit" class="btn-main" data-i18n="auth.loginButton">Login</button>
+
+                <div class="or"><h6>OR</h6></div>
+
+                <button type="button" class="btn-social"><i class="fab fa-google"></i> Google</button>
+                <button type="button" class="btn-social"><i class="fab fa-facebook"></i> Facebook</button>
+
+                <div class="singin-text">
+                    <a href="javascript:void(0)" id="toSignup" data-i18n="auth.toSignup">I don't have Account</a>
+                </div>
+            </form>
+
+            <form action="#" id="register-form" class="auth-form register" style="display: none;">
+                <h2 data-i18n="auth.registerTitle">Welcome to Rean Code</h2>
+
+                <div class="profile-upload">
+                    <div class="user-pro">
+                        <i class="fas fa-user"></i>
+                        <input type="file" accept="image/*" id="profileUpload">
+                    </div>
+                </div>
+
+                <label for="reg-user" data-i18n="auth.username">Username</label>
+                <input type="text" id="reg-user" placeholder="Rean Code" required>
+
+                <label for="reg-dob" data-i18n="auth.dob">Date of Birth</label>
+                <input type="date" id="reg-dob">
+
+                <label for="reg-email" data-i18n="auth.email">Email</label>
+                <input type="email" id="reg-email" placeholder="Rean@code.com" required>
+
+                <label for="reg-pass" data-i18n="auth.password">Password</label>
+                <input type="password" id="reg-pass" placeholder="xxxxxxxx" required>
+
+                <button type="submit" class="btn-main" data-i18n="auth.signupButton">Sign Up</button>
+
+                <div class="register-text">
+                    <a href="javascript:void(0)" id="toLogin" data-i18n="auth.toLogin">I have Account</a>
+                </div>
+            </form>
+        </div>
+
+        <div id="home" class="main-content" style="display: block;">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title"><span data-i18n="home.titlePrefix">Welcome to</span> <span class="gradient-text">Rean Code</span></h1>
+                    <p class="hero-subtitle" data-i18n="home.subtitle">Your journey to mastering programming starts here</p>
+                    <div class="hero-buttons">
+                        <button class="btn-hero primary" data-nav-target="dashboard" data-i18n="home.ctaPrimary">Get Started</button>
+                        <button class="btn-hero secondary" data-nav-target="books" data-i18n="home.ctaSecondary">Explore Courses</button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>10,000+</h3>
+                        <p data-i18n="home.stats.learners">Active Learners</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-book"></i>
+                        <h3>500+</h3>
+                        <p data-i18n="home.stats.courses">Courses</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-certificate"></i>
+                        <h3>50,000+</h3>
+                        <p data-i18n="home.stats.certificates">Certificates</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2 class="section-title" data-i18n="home.why">Why Choose Rean Code?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 data-i18n="home.features.ai.title">AI-Powered Learning</h3>
+                        <p data-i18n="home.features.ai.desc">Get instant help from our intelligent AI assistant</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 data-i18n="home.features.progress.title">Track Progress</h3>
+                        <p data-i18n="home.features.progress.desc">Monitor your learning journey with detailed analytics</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 data-i18n="home.features.community.title">Community Support</h3>
+                        <p data-i18n="home.features.community.desc">Connect with fellow learners and experts</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 data-i18n="home.features.achievements.title">Achievements</h3>
+                        <p data-i18n="home.features.achievements.desc">Earn badges and certificates as you progress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="video" class="main-content" style="display: none;">
+            <div class="content-shell">
+                <div class="section-header">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="video.eyebrow">Video Library</p>
+                        <h1 data-i18n="video.title">Learn with guided coding videos</h1>
+                        <p data-i18n="video.subtitle">Start with practical playlists built for Khmer learners and beginners.</p>
+                    </div>
+                </div>
+                <div class="section-grid three-column">
+                    <article class="glass-card media-card">
+                        <span class="media-tag" data-i18n="video.card1.tag">Beginner</span>
+                        <h3 data-i18n="video.card1.title">HTML and CSS Foundations</h3>
+                        <p data-i18n="video.card1.desc">Build your first landing page and understand structure, layout, and responsive design.</p>
+                        <div class="card-meta"><span>12 videos</span><span>3h 20m</span></div>
+                        <button class="btn-hero secondary section-action" data-nav-target="books" data-i18n="common.watchNow">Watch Now</button>
+                    </article>
+                    <article class="glass-card media-card">
+                        <span class="media-tag" data-i18n="video.card2.tag">Popular</span>
+                        <h3 data-i18n="video.card2.title">JavaScript Project Sprint</h3>
+                        <p data-i18n="video.card2.desc">Practice DOM events, arrays, and small projects that feel like real work.</p>
+                        <div class="card-meta"><span>18 videos</span><span>4h 50m</span></div>
+                        <button class="btn-hero secondary section-action" data-nav-target="quiz" data-i18n="common.watchNow">Watch Now</button>
+                    </article>
+                    <article class="glass-card media-card">
+                        <span class="media-tag" data-i18n="video.card3.tag">Career</span>
+                        <h3 data-i18n="video.card3.title">Frontend Developer Roadmap</h3>
+                        <p data-i18n="video.card3.desc">Understand the skills, tools, and portfolio plan needed for junior developer jobs.</p>
+                        <div class="card-meta"><span>9 videos</span><span>2h 10m</span></div>
+                        <button class="btn-hero secondary section-action" data-nav-target="services" data-i18n="common.watchNow">Watch Now</button>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content" id="books" style="display: none;">
+            <div class="content-shell">
+                <div class="section-header">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="books.eyebrow">Course Tracks</p>
+                        <h1 data-i18n="books.title">Choose a learning path</h1>
+                        <p data-i18n="books.subtitle">Structured lessons, practice tasks, and milestones for each technology.</p>
+                    </div>
+                </div>
+                <div class="books-content">
+                    <div class="books-card">
+                        <div class="poster">
+                            <img src="/reancodeV2/public/icon8-html-5.png" alt="html books">
+                        </div>
+                        <div class="staters">
+                            <p data-i18n="books.start">Start</p>
+                            <span>HTML</span>
+                            <p data-i18n="books.free">Free</p>
+                        </div>
+                        <div class="booksPos-text">
+                            <h5 data-i18n="books.html.title">HTML for Beginners</h5>
+                            <h6 data-i18n="books.html.desc">HTML tags, semantic markup, forms, tables, and SEO basics.</h6>
+                        </div>
+                        <button type="button" class="startlearnBtn section-action" data-course="HTML" data-i18n="books.learn">Start Learning</button>
+                    </div>
+
+                    <div class="books-card">
+                        <div class="poster">
+                            <img src="/reancodeV2/public/icon8-css-5.png" alt="css books">
+                        </div>
+                        <div class="staters">
+                            <p data-i18n="books.start">Start</p>
+                            <span>CSS</span>
+                            <p data-i18n="books.free">Free</p>
+                        </div>
+                        <div class="booksPos-text">
+                            <h5 data-i18n="books.css.title">CSS for Layout and Design</h5>
+                            <h6 data-i18n="books.css.desc">Flexbox, Grid, animation, responsive design, and reusable components.</h6>
+                        </div>
+                        <button type="button" class="startlearnBtn section-action" data-course="CSS" data-i18n="books.learn">Start Learning</button>
+                    </div>
+
+                    <div class="books-card">
+                        <div class="poster">
+                            <img src="/reancodeV2/public/icon8-javascript.png" alt="javascript books">
+                        </div>
+                        <div class="staters">
+                            <p data-i18n="books.start">Start</p>
+                            <span>JavaScript</span>
+                            <p data-i18n="books.free">Free</p>
+                        </div>
+                        <div class="booksPos-text">
+                            <h5 data-i18n="books.js.title">JavaScript Essentials</h5>
+                            <h6 data-i18n="books.js.desc">Variables, functions, events, APIs, and project-based problem solving.</h6>
+                        </div>
+                        <button type="button" class="startlearnBtn section-action" data-course="JavaScript" data-i18n="books.learn">Start Learning</button>
+                    </div>
+
+                    <div class="books-card">
+                        <div class="poster">
+                            <img src="/reancodeV2/public/icon8-nodejs.png" alt="nodejs books">
+                        </div>
+                        <div class="staters">
+                            <p data-i18n="books.start">Start</p>
+                            <span>Node.js</span>
+                            <p data-i18n="books.free">Free</p>
+                        </div>
+                        <div class="booksPos-text">
+                            <h5 data-i18n="books.node.title">Node.js Backend Basics</h5>
+                            <h6 data-i18n="books.node.desc">Routing, REST APIs, file systems, and simple backend architecture.</h6>
+                        </div>
+                        <button type="button" class="startlearnBtn section-action" data-course="Node.js" data-i18n="books.learn">Start Learning</button>
+                    </div>
+
+                    <div class="books-card">
+                        <div class="poster">
+                            <img src="/reancodeV2/public/icon8-php.png" alt="php books">
+                        </div>
+                        <div class="staters">
+                            <p data-i18n="books.start">Start</p>
+                            <span>PHP</span>
+                            <p data-i18n="books.free">Free</p>
+                        </div>
+                        <div class="booksPos-text">
+                            <h5 data-i18n="books.php.title">PHP for Web Projects</h5>
+                            <h6 data-i18n="books.php.desc">Forms, sessions, MySQL basics, and traditional dynamic websites.</h6>
+                        </div>
+                        <button type="button" class="startlearnBtn section-action" data-course="PHP" data-i18n="books.learn">Start Learning</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="score" class="main-content" style="display: none;">
+            <div class="content-shell">
+                <div class="section-header">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="score.eyebrow">Leaderboard</p>
+                        <h1 data-i18n="score.title">Track your progress against the community</h1>
+                        <p data-i18n="score.subtitle">Points increase when you finish lessons, quizzes, and streak goals.</p>
+                    </div>
+                </div>
+                <div class="section-grid split-grid">
+                    <div class="glass-card">
+                        <h3 data-i18n="score.topLearners">Top Learners This Week</h3>
+                        <div class="leaderboard-list">
+                            <div class="leaderboard-item"><strong>#1</strong><span>Sokny</span><span>1,280 XP</span></div>
+                            <div class="leaderboard-item"><strong>#2</strong><span>Dara</span><span>1,110 XP</span></div>
+                            <div class="leaderboard-item"><strong>#3</strong><span>Lina</span><span>980 XP</span></div>
+                            <div class="leaderboard-item"><strong>#4</strong><span>You</span><span>860 XP</span></div>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <h3 data-i18n="score.goals">Current Goals</h3>
+                        <div class="progress-list compact-progress">
+                            <div class="progress-item">
+                                <div class="progress-info">
+                                    <span data-i18n="score.goal1">Finish 3 lessons</span>
+                                    <span class="progress-percent">67%</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 67%"></div></div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-info">
+                                    <span data-i18n="score.goal2">Pass JavaScript quiz</span>
+                                    <span class="progress-percent">80%</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-info">
+                                    <span data-i18n="score.goal3">Keep 7 day streak</span>
+                                    <span class="progress-percent">86%</span>
+                                </div>
+                                <div class="progress-bar"><div class="progress-fill" style="width: 86%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz" class="main-content" style="display: none;">
+            <div class="content-shell">
+                <div class="section-header">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="quiz.eyebrow">Practice Zone</p>
+                        <h1 data-i18n="quiz.title">Sharpen your skills with quick quizzes</h1>
+                        <p data-i18n="quiz.subtitle">Choose a topic and test your understanding before moving to the next course.</p>
+                    </div>
+                </div>
+                <div class="section-grid three-column">
+                    <article class="glass-card quiz-card">
+                        <h3>HTML Quiz</h3>
+                        <p data-i18n="quiz.html">15 questions on tags, forms, and semantic layout.</p>
+                        <button class="btn-hero secondary quiz-start" data-quiz="HTML" data-i18n="quiz.start">Start Quiz</button>
+                    </article>
+                    <article class="glass-card quiz-card">
+                        <h3>CSS Quiz</h3>
+                        <p data-i18n="quiz.css">12 questions on selectors, box model, and responsive design.</p>
+                        <button class="btn-hero secondary quiz-start" data-quiz="CSS" data-i18n="quiz.start">Start Quiz</button>
+                    </article>
+                    <article class="glass-card quiz-card">
+                        <h3>JavaScript Quiz</h3>
+                        <p data-i18n="quiz.js">20 questions on DOM events, functions, arrays, and APIs.</p>
+                        <button class="btn-hero secondary quiz-start" data-quiz="JavaScript" data-i18n="quiz.start">Start Quiz</button>
+                    </article>
+                </div>
+                <div class="glass-card section-note" id="quizStatusCard">
+                    <h3 data-i18n="quiz.statusTitle">Quiz status</h3>
+                    <p id="quizStatusText" data-i18n="quiz.statusDefault">Choose a quiz to begin. Your best score will appear here.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="community" class="main-content" style="display: none;">
+            <div class="content-shell">
+                <div class="section-header">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="community.eyebrow">Community</p>
+                        <h1 data-i18n="community.title">Learn with other builders</h1>
+                        <p data-i18n="community.subtitle">Join discussions, ask for code reviews, and share your progress.</p>
+                    </div>
+                </div>
+                <div class="section-grid split-grid">
+                    <div class="glass-card">
+                        <h3 data-i18n="community.rooms">Popular Rooms</h3>
+                        <div class="community-list">
+                            <div class="community-item">
+                                <strong>Frontend Study Group</strong>
+                                <p data-i18n="community.room1">Daily practice and portfolio feedback.</p>
+                            </div>
+                            <div class="community-item">
+                                <strong>Khmer Beginners Hub</strong>
+                                <p data-i18n="community.room2">Friendly help for first-time coders.</p>
+                            </div>
+                            <div class="community-item">
+                                <strong>Project Build Night</strong>
+                                <p data-i18n="community.room3">Weekly mini projects and pair sessions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <h3 data-i18n="community.postTitle">Post an update</h3>
+                        <form id="communityForm" class="stack-form">
+                            <input type="text" id="communityName" placeholder="Your name">
+                            <textarea id="communityPost" rows="4" placeholder="Share what you are building..."></textarea>
+                            <button type="submit" class="btn-hero primary" data-i18n="community.postButton">Share Update</button>
+                        </form>
+                        <div class="section-note">
+                            <p id="communityStatus" data-i18n="community.statusDefault">No update posted yet. Introduce yourself to the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dashboard" class="main-content" style="display: none;">
+            <div class="dashboard-header">
+                <h1 data-i18n="dashboard.title">Dashboard</h1>
+                <p data-i18n="dashboard.subtitle">Track your learning progress and achievements</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="coursesCompleted">12</h3>
+                        <p data-i18n="dashboard.coursesCompleted">Courses Completed</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="learningHours">48</h3>
+                        <p data-i18n="dashboard.learningHours">Learning Hours</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="achievementsEarned">25</h3>
+                        <p data-i18n="dashboard.achievements">Achievements</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="streakDays">7</h3>
+                        <p data-i18n="dashboard.streak">Day Streak</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-bar"></i> <span data-i18n="dashboard.progress">Learning Progress</span></h3>
+                    </div>
+                    <div class="progress-list">
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>HTML &amp; CSS</span>
+                                <span class="progress-percent">85%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>JavaScript</span>
+                                <span class="progress-percent">70%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Python</span>
+                                <span class="progress-percent">60%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>React</span>
+                                <span class="progress-percent">45%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 45%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-star"></i> <span data-i18n="dashboard.recentAchievements">Recent Achievements</span></h3>
+                    </div>
+                    <div class="achievements-list">
+                        <div class="achievement-item">
+                            <div class="achievement-icon" style="background: #fbbf24;">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-info">
+                                <h4 data-i18n="dashboard.achievement1Title">First Course</h4>
+                                <p data-i18n="dashboard.achievement1Desc">Completed your first course</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon" style="background: #8b5cf6;">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="achievement-info">
+                                <h4 data-i18n="dashboard.achievement2Title">Week Warrior</h4>
+                                <p data-i18n="dashboard.achievement2Desc">7-day learning streak</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon" style="background: #10b981;">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="achievement-info">
+                                <h4 data-i18n="dashboard.achievement3Title">Code Master</h4>
+                                <p data-i18n="dashboard.achievement3Desc">Completed 100 coding challenges</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-tasks"></i> <span data-i18n="dashboard.activeCourses">Active Courses</span></h3>
+                    </div>
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="course-details">
+                                <h4>Advanced JavaScript</h4>
+                                <p data-i18n="dashboard.module1">Module 5 of 8</p>
+                                <div class="mini-progress"><div class="mini-progress-fill" style="width: 62%"></div></div>
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="course-details">
+                                <h4>React Fundamentals</h4>
+                                <p data-i18n="dashboard.module2">Module 3 of 10</p>
+                                <div class="mini-progress"><div class="mini-progress-fill" style="width: 30%"></div></div>
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="course-details">
+                                <h4>Python for Data Science</h4>
+                                <p data-i18n="dashboard.module3">Module 7 of 12</p>
+                                <div class="mini-progress"><div class="mini-progress-fill" style="width: 58%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calendar-alt"></i> <span data-i18n="dashboard.thisWeek">This Week</span></h3>
+                    </div>
+                    <div class="activity-calendar">
+                        <div class="calendar-day"><span data-i18n="dashboard.mon">Mon</span><div class="day-indicator active"></div></div>
+                        <div class="calendar-day"><span data-i18n="dashboard.tue">Tue</span><div class="day-indicator active"></div></div>
+                        <div class="calendar-day"><span data-i18n="dashboard.wed">Wed</span><div class="day-indicator active"></div></div>
+                        <div class="calendar-day"><span data-i18n="dashboard.thu">Thu</span><div class="day-indicator active"></div></div>
+                        <div class="calendar-day"><span data-i18n="dashboard.fri">Fri</span><div class="day-indicator active"></div></div>
+                        <div class="calendar-day"><span data-i18n="dashboard.sat">Sat</span><div class="day-indicator active"></div></div>
+                        <div class="calendar-day"><span data-i18n="dashboard.sun">Sun</span><div class="day-indicator"></div></div>
+                    </div>
+                    <div class="week-summary">
+                        <p data-i18n="dashboard.weekSummary1"><strong>6 days</strong> of learning this week!</p>
+                        <p data-i18n="dashboard.weekSummary2">Keep up the great work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="settings" class="main-content" style="display: none;">
+            <div class="content-shell">
+                <div class="section-header">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="settings.eyebrow">Settings</p>
+                        <h1 data-i18n="settings.title">Personalize your learning workspace</h1>
+                        <p data-i18n="settings.subtitle">Choose a language, manage your profile flow, and control your study experience.</p>
+                    </div>
+                </div>
+                <div class="section-grid split-grid">
+                    <div class="glass-card">
+                        <h3 data-i18n="settings.languageTitle">Language</h3>
+                        <p data-i18n="settings.languageDesc">Switch the whole interface between Khmer, English, and Chinese.</p>
+                        <div class="language-options large">
+                            <button class="lang-option" data-lang="en" type="button">English</button>
+                            <button class="lang-option" data-lang="kh" type="button">ខ្មែរ</button>
+                            <button class="lang-option" data-lang="zh" type="button">中文</button>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <h3 data-i18n="settings.accountTitle">Account actions</h3>
+                        <div class="settings-actions">
+                            <button class="btn-hero secondary" type="button" id="openLoginBtn" data-i18n="settings.openLogin">Open Login</button>
+                            <button class="btn-hero secondary" type="button" id="openSignupBtn" data-i18n="settings.openSignup">Open Sign Up</button>
+                            <button class="btn-hero secondary" type="button" id="openDashboardBtn" data-i18n="settings.openDashboard">Go to Dashboard</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-grid split-grid">
+                    <div class="glass-card">
+                        <h3 data-i18n="settings.studyTitle">Study reminders</h3>
+                        <p data-i18n="settings.studyDesc">Daily reminders are ready for your next lessons and quizzes.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h3 data-i18n="settings.aiTitle">AI assistant</h3>
+                        <p data-i18n="settings.aiDesc">The chat assistant will use your Gemini key stored in this browser only.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about" class="main-content" style="display: none;">
+            <div class="content-shell">
+                <div class="section-header">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="about.eyebrow">About Rean Code</p>
+                        <h1 data-i18n="about.title">A learning platform built for practical developers</h1>
+                        <p data-i18n="about.subtitle">Rean Code helps students in Cambodia and beyond build real programming skills with guided practice.</p>
+                    </div>
+                </div>
+                <div class="section-grid split-grid">
+                    <div class="glass-card">
+                        <h3 data-i18n="about.missionTitle">Mission</h3>
+                        <p data-i18n="about.missionDesc">Make software education more accessible, more practical, and easier to follow in local languages.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h3 data-i18n="about.focusTitle">Focus</h3>
+                        <p data-i18n="about.focusDesc">Frontend, backend, AI support, quizzes, and community-first learning paths for beginners.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="services" class="main-content" style="display: none;">
+            <div class="content-shell">
+                <div class="section-header">
+                    <div>
+                        <p class="section-eyebrow" data-i18n="services.eyebrow">Services</p>
+                        <h1 data-i18n="services.title">Tools to help you learn, build, and launch</h1>
+                        <p data-i18n="services.subtitle">Use the platform for guided lessons, mentoring, and project feedback.</p>
+                    </div>
+                </div>
+                <div class="section-grid three-column">
+                    <article class="glass-card service-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3 data-i18n="services.card1Title">Project Coaching</h3>
+                        <p data-i18n="services.card1Desc">Build portfolio-ready apps with practical guidance and weekly milestones.</p>
+                    </article>
+                    <article class="glass-card service-card">
+                        <i class="fas fa-comments"></i>
+                        <h3 data-i18n="services.card2Title">Mentor Support</h3>
+                        <p data-i18n="services.card2Desc">Ask questions in Khmer or English and get direct study advice.</p>
+                    </article>
+                    <article class="glass-card service-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3 data-i18n="services.card3Title">Career Prep</h3>
+                        <p data-i18n="services.card3Desc">Prepare a resume, GitHub profile, and project showcase for job applications.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div id="ai_assis" class="main-content" style="display: none;">
+            <div class="ai_content">
+                <div class="ai_header">
+                    <div class="img-box">
+                        <a href="#home">
+                            <i class="fas fa-robot"></i>
+                            <h2 data-i18n="ai.title">Rean Code Assistant</h2>
+                        </a>
+                    </div>
+                    <div id="clear-code">
+                        <h5 data-i18n="ai.clear">Clear Chat</h5>
+                    </div>
+                </div>
+
+                <main class="chat-main">
+                    <div id="chatWindow" class="chat-window">
+                        <div class="message bot">
+                            <div class="msg-avatar"><i class="fas fa-robot"></i></div>
+                            <div class="msg-bubble" id="assistantWelcome" data-i18n="ai.welcome">Hello! I am the Rean Code AI assistant. How can I help you today?</div>
+                        </div>
+                    </div>
+
+                    <div id="typing" class="typing-indicator" data-i18n="ai.typing">AI is typing...</div>
+
+                    <div class="input-container">
+                        <input type="text" id="userInput" class="chat-input" data-i18n-placeholder="ai.placeholder" placeholder="Ask your coding question here...">
+                        <button id="sendBtn" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/reancodeV2/public/ReanCodeIcon.png" alt="Rean Code Logo">
+                        <h3>REAN CODE</h3>
+                        <p class="footer-tagline" data-i18n="brand.tagline">LEARN. BUILD. GROW.</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.description">
+                        Empowering the next generation of developers through innovative learning experiences and practical coding workflows.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@reancode24" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/reancode24" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="https://t.me/ReanCode24" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="https://github.com/Veasna18/reancodeV2" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="mailto:info@reancode.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer.learn">Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#books"><i class="fas fa-chevron-right"></i> HTML &amp; CSS</a></li>
+                        <li><a href="#books"><i class="fas fa-chevron-right"></i> JavaScript</a></li>
+                        <li><a href="#books"><i class="fas fa-chevron-right"></i> Python</a></li>
+                        <li><a href="#dashboard"><i class="fas fa-chevron-right"></i> React</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Node.js</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer.resources">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#video"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.video">Videos</span></a></li>
+                        <li><a href="#quiz"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.quiz">Quiz</span></a></li>
+                        <li><a href="#community"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.community">Community</span></a></li>
+                        <li><a href="#dashboard"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.dashboard">Dashboard</span></a></li>
+                        <li><a href="#settings"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.settings">Settings</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer.company">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About</span></a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.services">Services</span></a></li>
+                        <li><a href="#community"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.community">Community</span></a></li>
+                        <li><a href="#settings"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.settings">Settings</span></a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer.newsletter">Newsletter</h4>
+                    <p data-i18n="footer.newsletterDesc">Subscribe to get the latest updates and courses</p>
+                    <form class="newsletter-form">
+                        <input type="email" data-i18n-placeholder="footer.emailPlaceholder" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> info@reancode.com</p>
+                        <p><i class="fas fa-phone"></i> +855 99 311 622</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Phnom Penh, Cambodia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer.bottom">© 2026 Rean Code. All rights reserved. Made in Cambodia.</p>
+                <div class="footer-bottom-links">
+                    <a href="#about" data-i18n="footer.privacy">Privacy</a>
+                    <a href="#services" data-i18n="footer.terms">Terms</a>
+                    <a href="#settings" data-i18n="footer.cookies">Cookies</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/reancodeV2/src/style/index.js"></script>
+        <script src="/reancodeV2/src/style/Ai_Assistant.js"></script>
+    </body>
+</html>
